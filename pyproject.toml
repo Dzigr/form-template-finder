@@ -1,0 +1,45 @@
+[tool.poetry]
+name = "form-template-finder"
+version = "0.1.0"
+description = "Form finder app based on FastApi"
+authors = ["Dmitry Ibragimov"]
+readme = "README.md"
+packages = [{include = "form_template_finder"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = {extras = ["all"], version = "^0.104.1"}
+motor = "^3.3.2"
+pytest = "^7.4.3"
+requests = "^2.31.0"
+pytest-asyncio = "^0.21.1"
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.0.292"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+select = ["E", "F", 'I', 'W']
+ignore = ['W293']
+
+fixable = ["ALL"]
+unfixable = []
+
+exclude = []
+per-file-ignores = {}
+
+line-length = 94
+
+[tool.pytest.ini_options]
+pythonpath = ['.']
+testpaths = ['tests']
+asyncio_mode = "auto"
+addopts = [
+    "--import-mode=importlib",
+]
+filterwarnings = [
+    'ignore::DeprecationWarning',
+    ]
