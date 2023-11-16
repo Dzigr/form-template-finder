@@ -1,0 +1,33 @@
+[
+  {
+    "_id":{"$oid":"6556010ece146e1e271c0ae5"},
+    "template_name":"OrderForm",
+    "order_date":"date",
+    "customer_phone":"phone",
+    "customer_email":"email",
+    "order_item":"text"
+  },
+  {
+    "_id":{"$oid":"6556010ece146e1e271c0ae6"},
+    "template_name":"JobOrderForm",
+    "created_date":"date",
+    "need_to_be_completed":"date",
+    "executor_phone":"phone",
+    "job_description":"text"
+  },
+  {
+    "_id":{"$oid":"6556010ece146e1e271c0ae7"},
+    "template_name":"RegistrationForm",
+    "birth_date":"date",
+    "user_phone":"phone",
+    "user_email":"email"
+  },
+  {
+    "_id":{"$oid":"6556010ece146e1e271c0ae8"},
+    "template_name":"DeliveryForm",
+    "deliver_date":"date",
+    "customer_phone":"phone",
+    "customer_email":"phone",
+    "address":"text"
+  }
+]
