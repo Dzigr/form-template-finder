@@ -1,0 +1,33 @@
+version: "3.7"
+
+services:
+  test_app:
+    build: .
+    env_file:
+      - .env.testing
+    container_name: test_form_app
+    command: pytest -v
+    ports:
+      - 8888:8000
+    depends_on:
+      - test_mongo_db
+      - mongo_seed
+  
+  test_mongo_db:
+    image: mongo
+    container_name: test_mongo_db
+    restart: unless-stopped
+    ports:
+      - 27018:27017
+    env_file:
+      - .env
+    logging:
+      driver: "none"
+
+  mongo_seed:
+    build: ./mongo
+    depends_on:
+      - test_mongo_db
+    environment:
+      - db_host=test_mongo_db
+      - db_name=form_templates

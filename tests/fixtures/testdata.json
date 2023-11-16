@@ -1,0 +1,48 @@
+{
+  "request_1": [
+    {
+      "birth_date": "1989-02-12",
+      "user_phone": "+7 888 777 66 55",
+      "user_email": "example@mail.com"
+    },
+    "RegistrationForm",
+    200
+  ],
+  "request_2": [
+    {
+      "created_date": "2022-11-01",
+      "need_to_be_completed": "2022-12-01",
+      "executor_phone": "+7 888 777 66 55",
+      "job_description": "Need to do some dangerous work..."
+    },
+    "JobOrderForm",
+    200
+    ],
+  "request_3": [
+    {
+      "order_date": "2022-12-12",
+      "customer_phone": "+7 888 777 66 55"
+    },
+    {
+      "order_date":"date",
+      "customer_phone":"phone"
+    },
+    200
+  ],
+  "invalid_request_1": [
+    {
+      "order_date": "2022/12/12",
+      "customer_phone": "+7 888 777 66 55"
+    },
+    ["Invalid date format. It's need to be: %Y-%m-%d' or '%d.%m.%Y'"],
+    422
+],
+  "invalid_request_2": [
+    {
+      "order_date": "2022-12-12",
+      "customer_phone": "+78887776655"
+    },
+    ["Invalid phone number format. It's need to be: +7 xxx xxx xx xx"],
+    422
+  ]
+}
